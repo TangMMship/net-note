@@ -2,7 +2,7 @@
 
 ## 一、分层结构
 
-![img](https://secure2.wostatic.cn/static/xxwoFbYw7sSoqxQL4G8BEY/image.png?auth_key=1695949606-iJdisfWktep9Xs6fAkNH4R-0-53c648ae6e01f047bcbae85e61f46dd8)
+![image-20230929113204813](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20230929113204813.png)
 
 ### 1.1**IP协议(网际协议)   网络层**
 
@@ -104,8 +104,19 @@ ip地址特点
 
 经过internet nic 划分的地址，可以直接访问互联网
 
+
+
 私有ip
 
 局域网内主机联络规划的，不可以直接访问互联网
 
 ![img](https://secure2.wostatic.cn/static/46TtecG8NxsMTtT73WVdU6/image.png?auth_key=1695954246-fv9owo7bDqJ7ifKg5UFQRK-0-e6245776434027f255d2ca7018174ee2)
+
+
+
+
+
+### 2.3. 端口
+
+​	
+
