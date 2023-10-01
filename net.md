@@ -169,13 +169,13 @@ tcp/ip协议中，采用端口标识通信进程，用于区分一个系统中�
 
 ### 3.1数据发送过程
 
-![image-20230930214402086](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20230930214402086.png)
+![image-20230930214402086](./assets/image-20230930214402086.png)
 
 
 
 链路层封包格式
 
-**![image-20230930215307624](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20230930215307624.png)**
+**![image-20230930215307624](./assets/image-20230930215307624.png)**
 
 
 
@@ -186,7 +186,7 @@ tcp/ip协议中，采用端口标识通信进程，用于区分一个系统中�
 
 网络层和传输层封包格式
 
-![image-20230930215717267](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20230930215717267.png)
+![image-20230930215717267](./assets/image-20230930215717267.png)
 
 
 
@@ -194,7 +194,7 @@ tcp/ip协议中，采用端口标识通信进程，用于区分一个系统中�
 
 ### 3.2网络应用程序开发流程
 
-![image-20230930220558767](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20230930220558767.png)
+![image-20230930220558767](./assets/image-20230930220558767.png)
 
 ## 二、网络编程实现
 
@@ -225,7 +225,7 @@ tcp/ip协议中，采用端口标识通信进程，用于区分一个系统中�
 | 0x34 |  0x02   |
 | 0x56 |  0x03   |
 
-![image-20231001105741023](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001105741023.png)
+![image-20231001105741023](./assets/image-20231001105741023.png)
 
 union共用体给a赋值同时也会给b赋值，b是char类型只能存下一个字节，代表a地址低位存下数据
 
@@ -233,19 +233,19 @@ union共用体给a赋值同时也会给b赋值，b是char类型只能存下一�
 
 ### 1.2字节序转换
 
-![image-20231001110846690](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001110846690.png)
+![image-20231001110846690](./assets/image-20231001110846690.png)
 
 htonl函数  host——>network  主机自己的字节序转换成网络字节序  l代表长整型，s代表短整型
 
-![image-20231001111201300](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001111201300.png)
+![image-20231001111201300](./assets/image-20231001111201300.png)
 
-![image-20231001111251875](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001111251875.png)
+![image-20231001111251875](./assets/image-20231001111251875.png)
 
-![image-20231001111325898](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001111325898.png)
+![image-20231001111325898](./assets/image-20231001111325898.png)
 
 
 
-![image-20231001111346117](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001111346117.png)
+![image-20231001111346117](./assets/image-20231001111346117.png)
 
 ### 2.3ip地址转换函数
 
@@ -301,7 +301,7 @@ const char* inet_ntop(int family , const void *addrptr , char *strrptr ,size_t l
 
 ​	len：strptr缓存区长度
 
-![image-20231001142607061](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001142607061.png)
+![image-20231001142607061](./assets/image-20231001142607061.png)
 
 16字节是加上了4个点 .   3*4+4  每个字节用了3个char表示就是3字节  ip地址4字节就是3*4=12  12+4=16
 
@@ -313,15 +313,15 @@ const char* inet_ntop(int family , const void *addrptr , char *strrptr ,size_t l
 
 
 
-![image-20231001142928509](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001142928509.png)
+![image-20231001142928509](./assets/image-20231001142928509.png)
 
-![image-20231001143002194](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001143002194.png)
+![image-20231001143002194](./assets/image-20231001143002194.png)
 
 
 
 下面两个函数也可以转换ip地址，但只适用于ipv4
 
-![image-20231001144018287](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001144018287.png)
+![image-20231001144018287](./assets/image-20231001144018287.png)
 
 ### 2.4网络编程接口socket
 
@@ -331,7 +331,7 @@ const char* inet_ntop(int family , const void *addrptr , char *strrptr ,size_t l
 
 **类型**
 
-![image-20231001144943939](image-20231001144943939.png)
+![image-20231001144943939](./assets/image-20231001144943939-1696145107766-24.png)
 
 
 
@@ -339,7 +339,7 @@ const char* inet_ntop(int family , const void *addrptr , char *strrptr ,size_t l
 
 UDP应用：dns域名解析、NFS网络文件系统、RTP流媒体等
 
-![image-20231001145155074](image-20231001145322277.png)
+![image-20231001145322277](./assets/image-20231001145322277-1696145204925-26.png)
 
 **UDP网络编程流程**
 
