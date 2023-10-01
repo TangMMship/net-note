@@ -325,9 +325,9 @@ const char* inet_ntop(int family , const void *addrptr , char *strrptr ,size_t l
 
 ### 2.4网络编程接口socket
 
-![image-20231001144517102](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001144517102.png)
+![image-20231001144517102](./assets/image-20231001144517102.png)
 
-![image-20231001144712331](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001144712331.png)
+![image-20231001144712331](./assets/image-20231001144712331.png)
 
 **类型**
 
@@ -344,6 +344,12 @@ UDP应用：dns域名解析、NFS网络文件系统、RTP流媒体等
 **UDP网络编程流程**
 
 服务器
+
+
+
+客户端
+
+
 
 
 
