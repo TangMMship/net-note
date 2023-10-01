@@ -339,15 +339,13 @@ const char* inet_ntop(int family , const void *addrptr , char *strrptr ,size_t l
 
 UDP应用：dns域名解析、NFS网络文件系统、RTP流媒体等
 
-![image-20231001145155074](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001145155074.png)
+![image-20231001145155074](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001145322277.png)
 
 **UDP网络编程流程**
 
 服务器
 
 
-
-客户端
 
 
 
