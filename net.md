@@ -60,13 +60,13 @@ http ftp smtp等
 
 如 ntp nfs dns
 
-2.1 MAC地址
+### **2.1 MAC地址**
 
 用于标识设备，48bit
 
 两个16进制数为一组(8bit)，分为6组，每组用  :   隔开  前三组为厂商id ，后三组为主设备id
 
-2.2 ip地址 网际协议地址
+### 2.2 ip地址 网际协议地址
 
 ip地址是任意一台主机在网络上的唯一标识
 
@@ -118,5 +118,236 @@ ip地址特点
 
 ### 2.3. 端口
 
-​	
+#### **2.3.1端口概述**：
+
+tcp/ip协议中，采用端口标识通信进程，用于区分一个系统中的多个进程
+
+
+
+#### **2.3.2特点**
+
+1. 同一个端口，在不同系统对应不同进程；
+2. 同一个系统，一个端口只能由一个进程拥有；
+3. 在一个进程拥有一个端口后，传输层传输到该端口的所有信息都由该进程接收，同理，此进程送出的所有信息都由传输层经过此端口传输。
+
+
+
+### 2.4端口号
+
+#### **用途：**
+
+**用于标识一个运行的网络程序**
+
+
+
+#### 特点：
+
++ 端口号是无符号短整型的类型；
++ 每个端口都有一个对应的端口号；
++ tcp、udp维护着各自独立的端口号；
++ 网络程序至少占用一个端口号；
+
+
+
+**知名端口号 1~1023**
+
+由iana互联网数组分配机构统一分配
+
+如ftp-21  http-80
+
+服务器强制使用需要加root权限
+
+
+
+动态端口（应用程序通常使用的）
+
+1024~65535
+
+
+
+
+
+### 3.1数据发送过程
+
+![image-20230930214402086](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20230930214402086.png)
+
+
+
+链路层封包格式
+
+**![image-20230930215307624](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20230930215307624.png)**
+
+
+
++ 记录了源mac和目的mac地址 
++ 确定了以太网头后面（上一层）用的什么协议  例如ip协议等等
+
+
+
+网络层和传输层封包格式
+
+![image-20230930215717267](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20230930215717267.png)
+
+
+
+
+
+### 3.2网络应用程序开发流程
+
+![image-20230930220558767](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20230930220558767.png)
+
+## 二、网络编程实现
+
+### 1.1字节序
+
+#### 字节序概述：
+
+多字节的存储顺序
+
++ 网络协议指定了字节存储顺序为大端存储
+
++ 同一台主机间的通讯不需要考虑字节序
++ 异构计算机之间通讯，需要把自己的字节序转换成网络字节序即大端格式
+
+分为 **大端模式** 和 **小端模式**
+
+大端模式：高位字节存储在低位地址
+
+小端模式：低位字节存储在低位地址
+
+
+
+大端存储0x123456
+
+| data | address |
+| :--: | :-----: |
+| 0x12 |  0x01   |
+| 0x34 |  0x02   |
+| 0x56 |  0x03   |
+
+![image-20231001105741023](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001105741023.png)
+
+union共用体给a赋值同时也会给b赋值，b是char类型只能存下一个字节，代表a地址低位存下数据
+
+
+
+### 1.2字节序转换
+
+![image-20231001110846690](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001110846690.png)
+
+htonl函数  host——>network  主机自己的字节序转换成网络字节序  l代表长整型，s代表短整型
+
+![image-20231001111201300](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001111201300.png)
+
+![image-20231001111251875](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001111251875.png)
+
+![image-20231001111325898](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001111325898.png)
+
+
+
+![image-20231001111346117](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001111346117.png)
+
+### 2.3ip地址转换函数
+
+概述：ip地址输入是以字符串类型传入，进行协议传输时是以4字节整型进行传输
+
+人为识别的是字符串，网络中识别的是整型数据
+
+
+
+inet_pton函数
+
+in inet_pton(int family , const char *strptr , void *addrptr )
+
+功能：
+
+​	将点分式ip字符串地址转换成整型数据
+
+参数：
+
+​	family：协议族
+
+​			AF_INET		ipv4网络协议
+
+​			AF_INET6	      ipv6网络协议
+
+​	strptr：点分式十进制字符串
+
+​	addrptr：32位无符号整型ip地址
+
+返回值：
+
+​	成功返回1，失败返回其他
+
+头文件：
+
+#include<arpa/inet.h>
+
+
+
+同理还有
+
+inet_ntop函数，32位整型转换点分式十进制字符串
+
+const char* inet_ntop(int family , const void *addrptr , char *strrptr ,size_t len)		
+
+参数：
+
+​	family：协议族
+
+​	strptr：点分式十进制字符串
+
+​	addrptr：32位无符号整数
+
+​	len：strptr缓存区长度
+
+![image-20231001142607061](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001142607061.png)
+
+16字节是加上了4个点 .   3*4+4  每个字节用了3个char表示就是3字节  ip地址4字节就是3*4=12  12+4=16
+
+返回值：
+
+​	成功返回字符串首地址，失败返回null
+
+
+
+
+
+![image-20231001142928509](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001142928509.png)
+
+![image-20231001143002194](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001143002194.png)
+
+
+
+下面两个函数也可以转换ip地址，但只适用于ipv4
+
+![image-20231001144018287](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001144018287.png)
+
+### 2.4网络编程接口socket
+
+![image-20231001144517102](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001144517102.png)
+
+![image-20231001144712331](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001144712331.png)
+
+**类型**
+
+![image-20231001144943939](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001144943939.png)
+
+
+
+### 2.5 UDP协议实现
+
+UDP应用：dns域名解析、NFS网络文件系统、RTP流媒体等
+
+![image-20231001145155074](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001145155074.png)
+
+**UDP网络编程流程**
+
+服务器
+
+
+
+客户端
+
+
 
