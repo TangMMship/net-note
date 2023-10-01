@@ -2,7 +2,7 @@
 
 ## 一、分层结构
 
-![image-20230929113204813](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20230929113204813.png)
+![image-20230929113204813](./assets/image-20230929113204813.png)
 
 ### 1.1**IP协议(网际协议)   网络层**
 
@@ -331,7 +331,7 @@ const char* inet_ntop(int family , const void *addrptr , char *strrptr ,size_t l
 
 **类型**
 
-![image-20231001144943939](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001144943939.png)
+![image-20231001144943939](image-20231001144943939.png)
 
 
 
@@ -339,7 +339,7 @@ const char* inet_ntop(int family , const void *addrptr , char *strrptr ,size_t l
 
 UDP应用：dns域名解析、NFS网络文件系统、RTP流媒体等
 
-![image-20231001145155074](C:\Users\TangM\AppData\Roaming\Typora\typora-user-images\image-20231001145322277.png)
+![image-20231001145155074](image-20231001145322277.png)
 
 **UDP网络编程流程**
 
