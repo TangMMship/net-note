@@ -1,0 +1,17 @@
+# ninja log v5
+0	810	7179537233778395	CMakeFiles/udp_server.dir/main.c.obj	8e599ff51bbc9d9c
+813	931	7179537234971492	udp_server.exe	fce5d3cc5109a8bf
+2	727	7179558490378389	CMakeFiles/udp_server.dir/main.c.obj	8e599ff51bbc9d9c
+727	840	7179558491478404	udp_server.exe	fce5d3cc5109a8bf
+2	694	7179559620643892	CMakeFiles/udp_server.dir/main.c.obj	8e599ff51bbc9d9c
+694	806	7179559621743881	udp_server.exe	fce5d3cc5109a8bf
+3	734	7179564210196229	CMakeFiles/udp_server.dir/main.c.obj	8e599ff51bbc9d9c
+735	852	7179564211356220	udp_server.exe	fce5d3cc5109a8bf
+2	856	7179564929726026	CMakeFiles/udp_server.dir/main.c.obj	8e599ff51bbc9d9c
+856	1013	7179564931276030	udp_server.exe	fce5d3cc5109a8bf
+2	689	7179566810593084	CMakeFiles/udp_server.dir/main.c.obj	8e599ff51bbc9d9c
+690	791	7179566811593043	udp_server.exe	fce5d3cc5109a8bf
+2	760	7179567774314943	CMakeFiles/udp_server.dir/main.c.obj	8e599ff51bbc9d9c
+761	862	7179567775304934	udp_server.exe	fce5d3cc5109a8bf
+2	808	7179570419095380	CMakeFiles/udp_server.dir/main.c.obj	8e599ff51bbc9d9c
+808	922	7179570420215368	udp_server.exe	fce5d3cc5109a8bf

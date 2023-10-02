@@ -333,7 +333,44 @@ const char* inet_ntop(int family , const void *addrptr , char *strrptr ,size_t l
 
 ![image-20231001144943939](./assets/image-20231001144943939-1696145107766-24.png)
 
+**socket函数** 	#include <sys/socket.h>
 
+![image-20231001155546403](./assets/image-20231001155546403.png)
+
+![image-20231001160155921](./assets/image-20231001160155921.png)
+
++ 创建的socket时，系统不会分配端口
++ 创建socket套接字默认属性是主动的，即发起服务请求，而服务器是被动的，需要修改套接字属性为被动
+
+
+
+- domain：即协议域，又称为协议族（family）。常用的协议族有，AF_INET、AF_INET6、AF_LOCAL（或称AF_UNIX，Unix域socket）、AF_ROUTE等等。协议族决定了socket的地址类型，在通信中必须采用对应的地址，如AF_INET决定了要用ipv4地址（32位的）与端口号（16位的）的组合、AF_UNIX决定了要用一个绝对路径名作为地址。
+- type：指定socket类型。常用的socket类型有，SOCK_STREAM、SOCK_DGRAM、SOCK_RAW、SOCK_PACKET、SOCK_SEQPACKET等等（socket的类型有哪些？）。
+- protocol：故名思意，就是指定协议。常用的协议有，IPPROTO_TCP、IPPTOTO_UDP、IPPROTO_SCTP、IPPROTO_TIPC等，它们分别对应TCP传输协议、UDP传输协议、STCP传输协议、TIPC传输协议。
+
+**注意：并不是上面的type和protocol可以随意组合的，如SOCK_STREAM不可以跟IPPROTO_UDP组合。当protocol为0时，会自动选择type类型对应的默认协议。**
+
+
+
+![image-20231002153916351](./assets/image-20231002153916351.png)
+
+两种结构体使用场景：
+
+![image-20231002154232416](./assets/image-20231002154232416.png)
+
+![image-20231002153947713](./assets/image-20231002153947713.png)
+
+##### sendto函数
+
+![image-20231002155108991](./assets/image-20231002155108991.png)
+
+##### recvfrom函数
+
+![image-20231002155221008](./assets/image-20231002155221008.png)
+
+##### recvfrom参数问题：为什么fromlen要用指针？
+
+写服务器端函数时懂了，recvfrom函数会将接收的消息的ip等信息给sockaddr结构体，而不是像sendto需要sockaddr的信息去给接收方。因此要获得发送方的信息，利用指针将参数赋值，获得结构体长度返回。
 
 ### 2.5 UDP协议实现
 
@@ -341,17 +378,107 @@ UDP应用：dns域名解析、NFS网络文件系统、RTP流媒体等
 
 ![image-20231001145322277](./assets/image-20231001145322277-1696145204925-26.png)
 
-**UDP网络编程流程**
+#### 2.5.1**UDP网络编程流程** c/s架构
 
-服务器
+服务器：
+
+1. 创建套接字socket
+2. 将服务器ip地址、端口号与套接字绑定
+3. 接收数据，recvfrom()
+4. 发送数据，sendto()
+
+客户端：
+
+1. 创建套接字
+2. 发送数据sendto()
+3. 接收数据recvfrom()
+4. 关闭套接字close()
 
 
 
-客户端
+**关于为什么客户端不需要绑定ip端口号而服务器需要绑定**
+
+1. 计算机端口号数量有限，如果不进行绑定，操作系统会随机生成一个端口号给服务器。如果操作系统给服务器分配这个端口号的同时，有其他程序也准备使用这个端口号或者说端口号已经被使用，则可能会导致服务器一直启动不起来。
+2. 其次，服务器运行起来就不会在停止了，我们将服务器端的端口号绑定有助于有规划的对主机中的端口号进行使用。
+3. 服务器是被动，需要客户端主动寻找ip，端口号，没有绑定就找不到，而主动方的客户端在发起通讯后服务器就可以知道客户端的ip地址，同时可以动态分配端口号给客户端。
+4. 因为客户端并不是一直运行的，只需要每次系统随机分配即可。
 
 
 
+#### 2.5.2UDP代码
+
+##### 问题1：头文件找不到
+
+windows下winsock.h/winsock2.h 
+linux下sys/socket.h
+
+不同平台头文件不一样
+
+#include <winsock.h> 或者 #include <winsock2.h>
+
+<arpa/inet.h>用<windows.h>代替
+
+##### 问题2：windows下使用socket出现未定义（clion）
+
+```
+#pragma comment(lib, "ws2_32.lib")		//手动链接库
+
+cmakefile中加上
+link_libraries(ws2_32)
+```
 
 
 
+##### 问题3：Windows下socket返回-1
 
+[socket编程：WSAStartup函数详解-CSDN博客](https://blog.csdn.net/u014779536/article/details/115822907)
+
+需要用WSAStartup先启动windows下的套接字
+
+WSAStartup
+
+- W：windows
+- S：socket
+- A：Asynchronous 异步
+  - 同步：阻塞、卡死状态
+  - 异步：多个工作同时进行
+- Startup：启动
+
+```
+WORD wVersionRequested;
+WSADATA wsaData;
+int err;
+wVersionRequested = MAKEWORD(2, 2);
+err = WSAStartup(wVersionRequested, &wsaData);
+if (err != 0) {
+    printf("WSAStartup failed with error: %d\n", err);
+    system("pause");
+    exit(1);
+}
+```
+
+
+
+##### 问题4：recvfrom 错误 GetLastError() SOCKET_ERROR 10014
+
+最后一个参数fromlen的长度错误，应该给他一个初始化值，大小为[struct](https://so.csdn.net/so/search?q=struct&spm=1001.2101.3001.7020) sockaddr 的大小
+
+既是：
+
+int fromlen=sizeof(struct sockaddr );
+
+
+
+##### 结果展示
+
+完成
+
+clent端:
+
+![image-20231002213953902](./assets/image-20231002213953902.png)
+
+
+
+server端
+
+![image-20231002213938267](./assets/image-20231002213938267.png)
