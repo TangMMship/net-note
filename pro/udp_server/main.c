@@ -31,10 +31,7 @@ int Socket_creat()
     return sockfd;
 }
 
-void Socket_serverinf()
-{
 
-}
 
 int main() {
     //变量初始化
@@ -66,7 +63,7 @@ int main() {
             printf("recv_erro%d\n",WSAGetLastError());
             exit(1);
         }
-        printf("%s\n",recvbuffer);
+        printf("IP=%s,port:%d   %s\n", inet_ntoa(clentaddr.sin_addr), ntohs(clentaddr.sin_port),recvbuffer);
         sendbuffer[strlen(sendbuffer) - 1] = '\0';      //手动加结束符
         sendto(sockfd, sendbuffer, sizeof(sendbuffer), 0, (struct sockaddr *) &clentaddr, clent_len);
 

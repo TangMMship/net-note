@@ -1,4 +1,4 @@
-# Install script for directory: E:/workspace/github/pro/udp
+# Install script for directory: E:/workspace/github/---------note/pro/udp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "E:/workspace/github/pro/udp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/workspace/github/---------note/pro/udp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
