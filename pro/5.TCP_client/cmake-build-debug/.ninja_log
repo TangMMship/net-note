@@ -1,0 +1,6 @@
+# ninja log v5
+1	156	7181136963809248	build.ninja	e3cad92dcdd66e04
+0	795	7181097986290237	CMakeFiles/TCP_client.dir/main.c.obj	478ffcd3627baa0a
+797	948	7181097987791808	TCP_client.exe	a3b8062ce8a975bf
+3	1198	7181137054080921	CMakeFiles/TCP_client.dir/main.c.obj	bed213b57400e5f0
+1199	1385	7181137055900919	TCP_client.exe	a3b8062ce8a975bf

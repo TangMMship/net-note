@@ -595,3 +595,274 @@ rwx     7   可读写，可执行
 
 用servrveraddr结构体去recvfrom接收数据或者创建一个新结构体接收服务器发送信息的新端口信息，更改sendto的ip相关结构体即可
 
+
+
+
+
+### 2.6 广播
+
+**用途：**
+
+1.定位本地子网内的主机
+前提是已知该主机位于本地子网，但是不知到他的单播地址。例如通过广播向所有子网内的主机的某端口发送数据报，如果主机有进程在该端口等待接收数据并回射数据，那么在recvfrom中会得到该主机的单播地址
+2.减少分组流通
+例如，多个客户主机与一个服务器主机通信的局域网中，广播的方式会尽量减少分组流通。
+
+
+
+**特点：**
+
+1.数据传输不用建立连接，所以不可靠（符合udp协议的特点）
+2.数据的发送是面向整个子网的，任何一台在子网内的计算机都可以接收到相同的数据；
+3.广播用于udp和原始IP,不能用于TCP
+
+服务端：设置广播权限
+
+```
+int flag=1;
+setsockopt(sockfd, SOL_SOCKET,SO_BROADCAST,&flag,sizeof(flag));
+
+含义：SOL_SOCKET表示给当前的socketfd，赋予SO_BROADCAST广播权限
+```
+
+客户端：绑定端口号以便于接收广播
+
+```
+struct sockaddr_in addrto; //构造Client地址IP+端口
+bzero(&addrto, sizeof(struct sockaddr_in));
+addrto.sin_family=AF_INET;
+addrto.sin_addr.s_addr=htonl("192.168.88.10");
+addrto.sin_port=htons(6000);
+int nlen=sizeof(addrto);
+```
+
+
+
+
+
+具体实现
+
+服务器
+
+![image-20231004111104383](./assets/image-20231004111104383.png)
+
+```
+// 发送端
+#include <iostream>
+#include <stdio.h>
+#include <sys/socket.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <string.h>
+ 
+using namespace std;
+ 
+int main()
+{
+	int sock = -1;
+	if ((sock = socket(AF_INET, SOCK_DGRAM, 0)) == -1) 
+	{   
+		cout<<"socket error"<<endl;	
+		return false;
+	}   
+	
+	const int opt = 1;//是否允许开启权限
+	//设置该套接字为广播类型，
+	int nb = 0;
+	nb = setsockopt(sock, SOL_SOCKET, SO_BROADCAST, (char *)&opt, sizeof(opt));
+	if(nb == -1)
+	{
+		cout<<"set socket error..."<<endl;
+		return false;
+	}
+ 	//指定Server IP  和  发送给Client的端口
+	struct sockaddr_in addrto;
+	bzero(&addrto, sizeof(struct sockaddr_in));
+	addrto.sin_family=AF_INET;
+	addrto.sin_addr.s_addr=htonl(INADDR_BROADCAST);
+	addrto.sin_port=htons(6000);
+	int nlen=sizeof(addrto);
+ 
+	while(1)
+	{
+		sleep(1);
+		//从广播地址发送消息
+		char smsg[] = {"abcdef"};
+		int ret=sendto(sock, smsg, strlen(smsg), 0, (sockaddr*)&addrto, nlen);
+		if(ret<0)
+		{
+			cout<<"send error...."<<ret<<endl;
+		}
+		else
+		{		
+			printf("ok ");	
+		}
+	}
+	return 0;
+}
+
+```
+
+客户端
+
+```
+// 接收端 http://blog.csdn.net/robertkun
+ 
+#include <iostream>
+#include <stdio.h>
+#include <sys/socket.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <netdb.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <string.h>
+ 
+using namespace std;
+ 
+int main()
+{
+	int sock = -1;
+	if ((sock = socket(AF_INET, SOCK_DGRAM, 0)) == -1) 
+	{   
+		cout<<"socket error"<<endl;	
+		return false;
+	}   
+	
+	// 广播地址
+	struct sockaddr_in from;
+	bzero(&from, sizeof(struct sockaddr_in));
+	from.sin_family = AF_INET;
+	from.sin_addr.s_addr = htonl(INADDR_ANY);
+	from.sin_port = htons(6000);
+	
+	if(bind(sock,(struct sockaddr *)&(addrto), sizeof(struct sockaddr_in)) == -1) 
+	{   
+		cout<<"bind error..."<<endl;
+		return false;
+	}
+ 
+	int len = sizeof(sockaddr_in);
+	char smsg[100] = {0};
+ 
+	while(1)
+	{
+		//从广播地址接受消息
+		int ret=recvfrom(sock, smsg, 100, 0, (struct sockaddr*)&from,(socklen_t*)&len);
+		if(ret<=0)
+		{
+			cout<<"read error...."<<sock<<endl;
+		}
+		else
+		{		
+			printf("%s\t", smsg);	
+		}
+		sleep(1);
+	}
+	return 0;
+}
+
+
+```
+
+
+
+
+
+### 2.7 TCP
+
+#### 2.7.1 tcp是什么
+
+TCP协议，**传输控制协议**（英语：Transmission Control Protocol，缩写为：TCP）是一种**面向连接的、可靠的、基于字节流的**通信协议
+
+![img](./assets/20200416192534946.png)
+
+**tcp流程：**
+
+![image-20231004152049553](./assets/image-20231004152049553.png)
+
+#### 2.7.2 tcp与udp区别
+
+![image-20231004151803194](./assets/image-20231004151803194.png)
+
+#### 2.7.3 TCP代码实现
+
+**注意：**
+
+tcp不能发0数据包
+
+listen()函数
+
+int **listen**(int **sockfd**, int **backlog**)
+
+listen函数的**第一个参数**时**即将要监听的socket描述字**，**第二个参数**为相应的socket可以排队的**最大连接数**，是待连接的消息队列数大小。socket()创建的socket默认是一个主动类型，**listen则将socket变成被动类型**，等待客户连接请求。
+
+
+accept()函数
+
+int **accept**(int sockfd, struct sockaddr *cliaddr, socklen_t *cliaddrlen);
+
++ accept函数的第一个函数为服务器端的socket描述字，是服务器一开始调动socket()函数产生的，而accept函数返回的是已经连接的socket描述字。第二个参数用于返回客户端的协议地址，第三个表示地址的长度。
+
++ 从已连接socket中取出一个进行通信，没有就阻塞等待
+
++ 服务器为了识别客户端通过accept为客户端创建了一个临时socketfd进行标识与通信，最初的服务器sockfd只是起连接作用
+
++ 用close关闭acceptfd代表服务器与该客户端连接关闭了，不代表服务器停止监听。
+
+tcp不能直接实现并发通信：
+
++ accept和recv两个阻塞函数导致  连接和通信只能2选一，不能在连接阻塞的同时进行通信，同理也不能在通信阻塞的时候连接
++ 选择while循环accept要连接其他客户端才能进行一次通信，而while不循环accept在与一个客户端连接后就不能与其他客户端连接了。
++ 采用多线程并发tcp或者多进程实现并发
+
+#### 2.7.4 三次握手
+
+为了保证连接双方通信无误，连接时进行三次握手
+
+第一次握手，发送方发送数据等待接收方回应       					//获取接收方通信状态
+
+第二次握手，接收方发起的，发送接收到数据的应答等待发送方回应	//接收方通信无误，能接到信息，并且获取发送方的通信状态
+
+第三次握手，发送方收到接收方的回应，并且回应接收方的回应		//说明发送方也能收到接收方的信息，到此证明双方通信无误
+
+
+
+**详细解释：**
+
+1. 第一次握手：Client将标志位SYN(建立新连接)置为1，随机产生一个值seq=x，并将该数据包发送给Server，Client进入SYN_SENT状态，等待Server确认。
+
+   
+
+2. 第二次握手：Server收到数据包后由标志位SYN=1知道Client请求建立连接，Server将标志位SYN和ACK(确认)都置为1，ack=x+1，随机产生一个值seq=y，并将该数据包发送给Client以确认连接请求，Server进入SYN_RCVD状态。
+
+   
+
+3. 第三次握手：Client收到确认后，检查ack是否为x+1，ACK是否为1，如果正确则将标志位ACK置为1，ack=y+1，并将该数据包发送给Server，Server检查ack是否为y+1，ACK是否为1，如果正确则连接建立成功，Client和Server进入ESTABLISHED状态，完成三次握手，随后Client与Server之间可以开始传输数据了。
+   
+
+tcp的三次握手
+
+第一次握手：客户端connect发送请求给服务器，服务器 accept接收到后发送ack给客户端；
+
+第二次握手：客户端接收到ack后connect返回一个值，连接完成，客户端--->服务器通信无误，同时客户端发送ack包给服务器；
+
+第三次握手：服务器接收到ack，accept返回值，到此服务器----->客户端放向通信也无误。
+
+
+
+#### 2.7.5 四次挥手
+
++ 第一次挥手：客户端向服务器发起请求释放连接的TCP报文，置FIN为1。客户端进入终止等待-1阶段。
+
++ 第二次挥手：服务器端接收到从客户端发出的TCP报文之后，确认了客户端想要释放连接，服务器端进入CLOSE-WAIT阶段，并向客户端发送一段TCP报文。客户端收到后进入种植等待-2阶段。
++ 第三次挥手：服务器做好了释放服务器端到客户端方向上的连接准备，再次向客户端发出一段TCP报文。。此时服务器进入最后确认阶段。
++ 第四次挥手：客户端收到从服务器端发出的TCP报文，确认了服务器端已做好释放连接的准备，于是进入时间等待阶段，并向服务器端发送一段报文。注意：第四次挥手后客户端不会立即进入closed阶段，而是等待2MSL再关闭。
+                                                      
+
+实际二三次挥手把一个cloce状态分为两步，确认断开和完成断开两步
+
+![image-20231004170445690](./assets/image-20231004170445690.png)

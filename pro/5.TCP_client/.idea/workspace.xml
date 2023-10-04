@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="TCP_client" targetName="TCP_client" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4d432dd4-389c-4bdc-b76a-4b78f7cffdc3" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/../../net.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../net.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/.idea/UDP-tftp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/.idea/serialmonitor_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/.cmake/api/v1/reply/cache-v2-eb041702451f81535844.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-17e27ce74c6f88a9fce8.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-379072903fa3b5a48c6d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/.cmake/api/v1/reply/index-2023-10-03T08-25-35-0167.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/.cmake/api/v1/reply/target-UDP_tftp-Debug-1a409cb7f31788ad0451.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-4016ed31adf6b437a259.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/.ninja_deps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/CMakeFiles/3.21.1/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/CMakeFiles/UDP_tftp.dir/main.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/UDP_tftp.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/build.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/cmake-build-debug/hello.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDP-tftp/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/.idea/io.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/.idea/serialmonitor_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/.cmake/api/v1/reply/cache-v2-d32b14551d5eaa575022.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-cfbff19648ae0c48663c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-c477def34ef7b845703c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/.cmake/api/v1/reply/index-2023-10-03T07-33-09-0572.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/.cmake/api/v1/reply/target-io-Debug-de253481e78555566746.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-4016ed31adf6b437a259.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/.ninja_deps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/CMakeFiles/3.21.1/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/CMakeFiles/io.dir/main.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/build.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/hello.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/io.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/cmake-build-debug/x.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../io/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/.idea/serialmonitor_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/.idea/udp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/.cmake/api/v1/reply/cache-v2-7097bd711006d5151ddb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-c0641a2dccfaa16f65c2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-0f485ca269bc6e47c4c5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/.cmake/api/v1/reply/index-2023-10-02T13-47-36-0085.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/.cmake/api/v1/reply/target-udp-Debug-206d7213dd6a69aaa850.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-4016ed31adf6b437a259.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/.ninja_deps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/CMakeFiles/3.21.1/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/CMakeFiles/udp.dir/main.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/build.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/cmake-build-debug/udp.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/.idea/serialmonitor_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/.idea/udp_server.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/.cmake/api/v1/query/cache-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/.cmake/api/v1/reply/cache-v2-2615e9ad480f7277eb31.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-a27335a48e6024c653f1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-2871890b5043583d6048.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/.cmake/api/v1/reply/index-2023-10-03T02-21-17-0738.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/.cmake/api/v1/reply/target-udp_server-Debug-e12c94c2f10a530a2356.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-4016ed31adf6b437a259.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/.ninja_deps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/CMakeFiles/3.21.1/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/CMakeFiles/udp_server.dir/main.c.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/build.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/cmake-build-debug/udp_server.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../udp_server/main.c" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2021" />
+    <option name="minorVersion" value="3.4" />
+  </component>
+  <component name="ProjectId" id="2WI2D04ENs3sLnEOcLSqS1JDlHN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.cidr.embedded.config" />
+  </component>
+  <component name="RunManager">
+    <configuration name="TCP_client" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="TCP_client" TARGET_NAME="TCP_client" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="TCP_client" RUN_TARGET_NAME="TCP_client">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="4d432dd4-389c-4bdc-b76a-4b78f7cffdc3" name="变更" comment="" />
+      <created>1696405650011</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1696405650011</updated>
+      <workItem from="1696405651622" duration="2571000" />
+      <workItem from="1696410494421" duration="626000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
