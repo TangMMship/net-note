@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <winsock2.h>
 #include <unistd.h>
+#include <signal.h>
 #pragma comment(lib, "ws2_32.lib")
 
 #define N 128
@@ -40,26 +41,26 @@ int main() {
     {
         erroinf("listen");
     }
-    if((acceptfd=accept(sockfd,(struct sockaddr*)&clentaddr,&clent_len))==-1)
-    {
-        erroinf("accept");
+
+    while(1) {
+        if ((acceptfd = accept(sockfd, (struct sockaddr *) &clentaddr, &clent_len)) == -1) {
+            erroinf("accept");
+        }
+
+        if (recv(acceptfd, recvbuffer, N, 0) == -1) {
+            erroinf("recv");
+        }
+        printf("IP=%s,port:%d   %s\n", inet_ntoa(clentaddr.sin_addr), ntohs(clentaddr.sin_port), recvbuffer);
+
+
+        fgets(sendbuffer, N, stdin);
+        sendbuffer[strlen(sendbuffer) - 1] = '\0';//结束符
+        if (send(acceptfd, sendbuffer, N, 0) == -1) {
+            erroinf("send");
+        }
+
+        closesocket(sockfd);
     }
-
-    if(recv(acceptfd,recvbuffer,N,0)==-1)
-    {
-        erroinf("recv");
-    }
-    printf("IP=%s,port:%d   %s\n", inet_ntoa(clentaddr.sin_addr), ntohs(clentaddr.sin_port),recvbuffer);
-
-
-    fgets(sendbuffer,N,stdin);
-    sendbuffer[strlen(sendbuffer)-1]='\0';//结束符
-    if(send(acceptfd,sendbuffer,N,0)==-1)
-    {
-        erroinf("send");
-    }
-
-    closesocket(sockfd);
     return 0;
 }
 

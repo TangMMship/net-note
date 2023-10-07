@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "e:/workspace/github/---------note/pro/TCP_server/cmake-build-debug"
+			"value" : "e:/workspace/github/---------note/pro/6.TCP_server/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -479,7 +479,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "E:/workspace/github/---------note/pro/TCP_server"
+			"value" : "E:/workspace/github/---------note/pro/6.TCP_server"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1095,7 +1095,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/workspace/github/---------note/pro/TCP_server/cmake-build-debug"
+			"value" : "E:/workspace/github/---------note/pro/6.TCP_server/cmake-build-debug"
 		},
 		{
 			"name" : "TCP_server_IS_TOP_LEVEL",
@@ -1119,7 +1119,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/workspace/github/---------note/pro/TCP_server"
+			"value" : "E:/workspace/github/---------note/pro/6.TCP_server"
 		}
 	],
 	"kind" : "cache",
